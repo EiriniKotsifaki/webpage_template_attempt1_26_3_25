@@ -1,28 +1,54 @@
+/* Βασικές Ρυθμίσεις */
 html {
   scroll-behavior: smooth;
 }
 
 img.scale-with-grid {
-	width: 100%; /*override existing setting*/
+  width: 100%; /* Κάνει την εικόνα να γεμίζει το διαθέσιμο χώρο */
+  height: auto; /* Διατηρεί την αναλογία της εικόνας */
+  max-width: 100%; /* Αποφεύγουμε την υπερβολική μεγέθυνση */
 }
 
 img.full-height {
-	height: 100%; /*override existing setting*/
+  height: 100%; /*override existing setting*/
 }
 
-
-/*MODIFICATIONS*/
-
-.quarter-bottom-rel { margin-bottom: 4% !important; }
-.quarter-bottom { margin-bottom: 25px !important; }
-.half-bottom { margin-bottom: 50px !important; }
-.one-bottom, .add-bottom { margin-bottom: 100px !important; }
-.two-bottoms { margin-bottom: 200px !important; }
-.one-top { margin-top: 100px !important; }
-.two-tops { margin-top: 200px !important; }
-
-.center{
-	text-align: center;
+/* Διορθώνουμε το πλάτος και το padding της .container */
+.container {
+  max-width: 100%;
+  padding: 0 10px; /* Μειώνουμε το padding για λιγότερο κενό */
+  box-sizing: border-box; /* Για να περιλαμβάνεται το padding στο συνολικό πλάτος */
 }
 
+/* Βελτιώνουμε τη στοίχιση με Flexbox */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Επιτρέπει στις στήλες να πηγαίνουν στην επόμενη γραμμή */
+  justify-content: space-between; /* Κεντράρει τα στοιχεία και τα διαχωρίζει */
+}
 
+.column {
+  width: 100%; /* Στην κινητή συσκευή, κάθε στήλη καταλαμβάνει όλο το πλάτος */
+  padding: 10px; /* Προσθέτουμε padding στις στήλες για καλύτερη εμφάνιση */
+}
+
+@media (min-width: 550px) {
+  .column {
+    width: 48%; /* Για μεγαλύτερες οθόνες, οι στήλες παίρνουν 48% πλάτος */
+  }
+}
+
+/* Κεντράρισμα του περιεχομένου */
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Σωστή κλίμακα εικόνας */
+img.scale-with-grid {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
