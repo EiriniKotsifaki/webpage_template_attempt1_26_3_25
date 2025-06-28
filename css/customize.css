@@ -1,18 +1,19 @@
+/* Βασικές Ρυθμίσεις */
 html {
   scroll-behavior: smooth;
 }
 
 img.scale-with-grid {
-	width: 100%; /*override existing setting*/
+  width: 100%; /*override existing setting*/
+  height: auto;
+  max-width: 100%; /* Αποφυγή υπερβολικής μεγέθυνσης */
 }
 
 img.full-height {
-	height: 100%; /*override existing setting*/
+  height: 100%; /*override existing setting*/
 }
 
-
-/*MODIFICATIONS*/
-
+/* Εφαρμογές για Στοίχιση Περιθωρίων */
 .quarter-bottom-rel { margin-bottom: 4% !important; }
 .quarter-bottom { margin-bottom: 25px !important; }
 .half-bottom { margin-bottom: 50px !important; }
@@ -21,9 +22,33 @@ img.full-height {
 .one-top { margin-top: 100px !important; }
 .two-tops { margin-top: 200px !important; }
 
-.center{
-	text-align: center;
+/* Κεντράρισμα του περιεχομένου */
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Στοίχιση του grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Κεντράρει τα στοιχεία */
+}
+
+/* Ρυθμίσεις για τις στήλες */
+.four.columns {
+  flex: 1 0 30%; /* 30% πλάτος για κάθε στήλη */
+  margin: 10px; /* Προσθήκη περιθωρίων */
+}
+
+/* Προσαρμογή στοίχισης για μικρές οθόνες */
+@media (max-width: 768px) {
+  .four.columns {
+    flex: 1 0 100%; /* Σε μικρές οθόνες κάθε στήλη παίρνει 100% πλάτος */
+    margin: 10px 0; /* Προσθήκη περιθωρίων μόνο κάθετα */
+  }
+}
 
 
